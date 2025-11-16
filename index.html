@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blackjack – 1 spelare</title>
+  <link rel="preconnect" href="https://deckofcardsapi.com">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="table">
+    <header class="topbar">
+      <h1>🂡 Blackjack</h1>
+      <div class="bankroll">
+        <span>Saldo:</span>
+        <strong id="bankroll">1000</strong>
+        <span>kr</span>
+      </div>
+    </header>
+
+    <main class="play-area">
+      <section class="dealer">
+        <h2>Dealer</h2>
+        <div id="dealer-cards" class="cards"></div>
+        <div class="score">
+          <span>Poäng: </span><strong id="dealer-score">0</strong>
+        </div>
+      </section>
+
+      <section class="player">
+        <h2>Spelare</h2>
+        <div id="player-cards" class="cards"></div>
+        <div class="score">
+          <span>Poäng: </span><strong id="player-score">0</strong>
+        </div>
+      </section>
+
+      <section class="controls">
+        <div class="bet">
+          <label for="bet-amount">Insats:</label>
+          <input id="bet-amount" type="number" min="10" step="10" value="50">
+          <button id="bet-min">+10</button>
+          <button id="bet-plus">+50</button>
+          <button id="bet-max">Max</button>
+        </div>
+
+        <div class="buttons">
+          <button id="btn-deal" class="primary">Dela</button>
+          <button id="btn-hit" disabled>Hit</button>
+          <button id="btn-stand" disabled>Stand</button>
+          <button id="btn-new" class="subtle">Ny omgång</button>
+        </div>
+      </section>
+
+      <div id="message" class="message" role="status" aria-live="polite"></div>
+    </main>
+
+    <footer class="footer">
+      <p>Kortbilder laddas som länkar från <a href="https://deckofcardsapi.com" target="_blank" rel="noopener">deckofcardsapi.com</a>.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
